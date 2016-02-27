@@ -1,0 +1,10 @@
+dualStepper	KEYWORD1
+motor		KEYWORD2
+Enable	KEYWORD2
+Stop	KEYWORD2
+Forward		KEYWORD2
+Reverse	KEYWORD2
+Left		KEYWORD2
+Right		KEYWORD2
+pitchLeft		KEYWORD2
+pitchRight		KEYWORD2
