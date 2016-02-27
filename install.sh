@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+cd $(dirname $(realpath $0))
 
 ARDUINO_SKETCHBOOK="${1:-$HOME/sketchbook}"
 
