@@ -2,11 +2,11 @@
 	path = libraries
 	url = git@github.com:MVSE-Outreach/arduino-libraries-hedgehog-bot.git
 [submodule "bot"]
-	path = bot
+	path = hedgehog_bot
 	url = git@github.com:MVSE-Outreach/arduino-sketch-hedgehog-bot.git
 [submodule "blink"]
-	path = blink
+	path = hedgehog_blink
 	url = git@github.com:MVSE-Outreach/arduino-sketch-hedgehog-bot-blink.git
 [submodule "wifi"]
-	path = wifi
+	path = hedgehog_wifi
 	url = git@github.com:MVSE-Outreach/arduino-sketch-hedgehog-bot-wifi.git
