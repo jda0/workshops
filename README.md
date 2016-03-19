@@ -18,6 +18,8 @@
 ### Raspberry Pi (Linux)
 
 ```sh
+$ git clone --recursive git@github.com:MVSE-Outreach/arduino-hedgehog-bot.git hedgehog-bot
+$ cd hedgehog-bot
 $ ./install.sh <PATH-TO-ARDUINO-SKETCHBOOK>
 ```
 ## Known issues
