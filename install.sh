@@ -8,12 +8,31 @@ if [[ ! -d "$ARDUINO_SKETCHBOOK" ]]; then
     exit 1
 fi
 
-SKETCHES="blink bot wifi"
+enumerate_folders_in_dir() {
+    local top_level_dir="$1"; shift
 
-for sketch in $SKETCHES; do
-    cp -r "$sketch" "$ARDUINO_SKETCHBOOK"
+    find "$top_level_dir" -mindepth 1 -maxdepth 1 -type d
+}
+
+for sketch in $(enumerate_folders_in_dir sketches); do
+    target="$ARDUINO_SKETCHBOOK/$(basename $sketch)"
+    if [[ ! -d "$target" ]]; then
+        cp -r "$sketch" "$target"
+    else
+        echo "$target already exists, not creating"
+    fi
 done
 
-for library in libraries/*; do
-    cp -r "$library" "${ARDUINO_SKETCHBOOK}/libraries"
+if [[ ! -d "$ARDUINO_SKETCHBOOK/libraries" ]]; then
+    echo "Arduino libraries folder does not exist, creating..."
+    mkdir "$ARDUINO_SKETCHBOOK/libraries"
+fi
+
+for library in $(enumerate_folders_in_dir libraries); do
+    target="$ARDUINO_SKETCHBOOK/libraries/$(basename $library)"
+    if [[ ! -d "$target" ]]; then
+        cp -r "$library/" "$target"
+    else
+        echo "$target already exists, not creating"
+    fi
 done
