@@ -10,13 +10,12 @@
 
     {% assign favicon_sizes = "57, 60, 72, 76, 114, 120, 144, 152, 180" | split: ", " %}
     {% for size in favicon_sizes%}
-    <link rel="apple-touch-icon" sizes="{{ size }}x{{ size }}"
-      href="/img/favicon/apple-touch-icon-{{ size }}x{{ size }}.png">
+    <link rel="apple-touch-icon" sizes="{{ size }}x{{ size }}" href="{{ site.baseurl }}/img/favicon/apple-touch-icon-{{ size }}x{{ size }}.png">
     {% endfor %}
 
-    <link rel="manifest" href="/img/favicon/manifest.json">
-    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <link rel="manifest" href="{{ site.baseurl }}/img/favicon/manifest.json">
+    <link rel="mask-icon" href="{{ site.baseurl }}/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon/favicon.ico">
 
     <!-- opengraph properties: http://ogp.me/ -->
     <meta property="og:title" content="{{ site.title }}">
@@ -25,11 +24,11 @@
     <meta property="og:image" content="{{ site.url }}/img/social/fbimage.jpg">
     <meta property="og:description" content="{{ site.description }}">
 
-    <link rel="stylesheet" href="/assets/style/style-151115.css" type="text/css">
-    <link rel="stylesheet" href="/assets/style/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/style/style-151115.css" type="text/css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/style/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="./assets/script/head-041115.js"></script>
+    <script src="{{ site.baseurl }}/assets/script/head-041115.js"></script>
 
     <!-- twitter button -->
     <script>window.twttr = (function(d, s, id) {
@@ -69,7 +68,7 @@
     </div>
 
     <header class="light-grey-background">
-      <a href="/"><h1>Hedgehog Bot<h1></a>
+      <a href="{{ site.baseurl }}/"><h1>Hedgehog Bot<h1></a>
     </header>
 
     <article>

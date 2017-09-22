@@ -19,10 +19,10 @@ title: "Hedgehog Bot: Challenge 2"
                           <li>Screen
                             <li>9V Battery + clip
                               <li>Jumper cables</ul><font size="3">
-                                <td width=20%><img src="/assets/media/wemosd1r2.jpg"><img src="Hedgehog Bot_files/microusb.jpg">
-                                  <td width=20%><img src="/assets/media/body.png">
-                                    <td width=20%><img src="/assets/media/motors.png"><img src="Hedgehog Bot_files/screen.png">
-                                      <td width=20%><img src="/assets/media/battery.png"><img src="Hedgehog Bot_files/cables.png">
+                                <td width=20%><img src="{{ site.baseurl }}/assets/media/wemosd1r2.jpg"><img src="{{ site.baseurl }}/assets/media/microusb.jpg">
+                                  <td width=20%><img src="{{ site.baseurl }}/assets/media/body.png">
+                                    <td width=20%><img src="{{ site.baseurl }}/assets/media/motors.png"><img src="{{ site.baseurl }}/assets/media/screen.png">
+                                      <td width=20%><img src="{{ site.baseurl }}/assets/media/battery.png"><img src="{{ site.baseurl }}/assets/media/cables.png">
                                     </tr></table>
                                     <hr>
                                     <h4>1. Build the body</h4>
@@ -35,8 +35,8 @@ title: "Hedgehog Bot: Challenge 2"
                                                     <p><font size="4">Plug 4 wires from the WeMos into the back of the screen.</ol>
                                                       <p>The screen should still be mounted on the body.
                                                         <p>You don't need to use the exact wire colours.
-                                                          <td><img src="/assets/media/screenwire.jpg"/></tr></table>
-                                                        <p align="center"><img src="/assets/media/oledfritzing.png"/>
+                                                          <td><img src="{{ site.baseurl }}/assets/media/screenwire.jpg"/></tr></table>
+                                                        <p align="center"><img src="{{ site.baseurl }}/assets/media/oledfritzing.png"/>
                                                           <p>
                                                             <hr>
                                                             <table><tr><td valign="top">
@@ -44,24 +44,24 @@ title: "Hedgehog Bot: Challenge 2"
                                                                   <p><font size="4">Plug 6 wires from the WeMos into the left motor driver.
                                                                       <p>If you look at the bot with the <b>screen facing you</b>, the driver is on the left side of the body.
                                                                         <p>You don't need to use the exact wire colours.
-                                                                          <td><img src="/assets/media/leftdriver.jpg"/></tr></table>
-                                                                        <p align="center"><img src="/assets/media/lmotorfritzing.png"/>
+                                                                          <td><img src="{{ site.baseurl }}/assets/media/leftdriver.jpg"/></tr></table>
+                                                                        <p align="center"><img src="{{ site.baseurl }}/assets/media/lmotorfritzing.png"/>
                                                                           <hr>
                                                                           <table><tr><td valign="top">
                                                                                 <h4>4. Wiring the Right Driver</h4>
                                                                                 <p><font size="4">Plug 6 wires from the WeMos into the right motor driver.
                                                                                     <p>If you look at the bot with the <b>screen facing you</b>, the driver is on the right side of the body.
                                                                                       <p>You don't need to use the exact wire colours.
-                                                                                        <td><img src="/assets/media/rightdriver.jpg"/></tr></table>
-                                                                                      <p align="center"><img src="/assets/media/rmotorfritzing.png"/>
+                                                                                        <td><img src="{{ site.baseurl }}/assets/media/rightdriver.jpg"/></tr></table>
+                                                                                      <p align="center"><img src="{{ site.baseurl }}/assets/media/rmotorfritzing.png"/>
                                                                                         <hr>
                                                                                         <h4>5. Plugging things in</h4>
                                                                                         <ol><li><font size="4">Plug the motor cables into the drivers. The white connector should click in to the white socket on the driver. Do this for both motors.
-                                                                                              <p align="center"><img src="/assets/media/motorwire.jpg"/>
+                                                                                              <p align="center"><img src="{{ site.baseurl }}/assets/media/motorwire.jpg"/>
                                                                                                 <li>Connect the battery clip to the battery.
                                                                                                   <li>Plug the battery into the WeMos as shown below. You should see your SOS program running!
                                                                                                     <font color="#7c8081"> 
-                                                                                                      <p align="center"><img src="/assets/media/battwire.jpg"/>
+                                                                                                      <p align="center"><img src="{{ site.baseurl }}/assets/media/battwire.jpg"/>
                                                                                                         <p><font color="red"><font size="4"> Ask a helper if you can't see lights on the WeMos
                                                                                                               <li><font color="#7c8081"> Unplug the battery from the WeMos for now.</ol> 
                                                                                                                 <hr>
@@ -73,7 +73,7 @@ title: "Hedgehog Bot: Challenge 2"
                                                                                                                                 <li>stop the motors for a second
                                                                                                                                   <li>repeat over and over!</ul>
                                                                                                                                   <p>
-                                                                                                                                    <img src="/assets/media/ide-top.png"/>
+                                                                                                                                    <img src="{{ site.baseurl }}/assets/media/ide-top.png"/>
                                                                                                                                     <code><font size="4">
                                                                                                                                         <br><font color="#728E00">#include <font color="#00979C">"drawFace.h"
                                                                                                                                             <br><font color="#728E00">#include <font color="#00979C">"espDualStepper.h"
@@ -93,10 +93,10 @@ title: "Hedgehog Bot: Challenge 2"
                                                                                                                                                                                                                             <br><font color="black">}
                                                                                                                                                                                                                               <br>
                                                                                                                                                                                                                             </code>
-                                                                                                                                                                                                                            <img src="/assets/media/ide-bottom.png"/>
+                                                                                                                                                                                                                            <img src="{{ site.baseurl }}/assets/media/ide-bottom.png"/>
                                                                                                                                                                                                                             <font color="#7c8081"><font size="4">
                                                                                                                                                                                                                                 <li><font size="4">Copy the code above and paste it into the arduino software.
-                                                                                                                                                                                                                                    <li>Press the upload <img src="/assets/media/upload.png"/> button. You'll see the code compiling and uploading in the black box at the bottom.
+                                                                                                                                                                                                                                    <li>Press the upload <img src="{{ site.baseurl }}/assets/media/upload.png"/> button. You'll see the code compiling and uploading in the black box at the bottom.
                                                                                                                                                                                                                                       <li>When it's done you should see 'Done uploading' just above the black box.
                                                                                                                                                                                                                                         <li>Unplug the USB and plug in the battery</ol> 
                                                                                                                                                                                                                                         <p><font color="red">If the screen isn't displaying or the motors aren't moving ask a helper to check your wiring.
@@ -105,14 +105,14 @@ title: "Hedgehog Bot: Challenge 2"
                                                                                                                                                                                                                                               <h4>7. Dance! </h4>
                                                                                                                                                                                                                                               <p><font size="4">Now you've built your bot it's time to make it dance! 
                                                                                                                                                                                                                                                   <p><font size="5"><font color = "red">Use the following commands inside the loop to make the bot dance. 
-                                                                                                                                                                                                                                                        <p align="center"><img src="/assets/media/commands.png"/>
+                                                                                                                                                                                                                                                        <p align="center"><img src="{{ site.baseurl }}/assets/media/commands.png"/>
                                                                                                                                                                                                                                                           <p><font size="4"><font color="#7c8081">Don't forget delays!
                                                                                                                                                                                                                                                                 <p><font color = "red">Remember to plug in the battery after uploading.
                                                                                                                                                                                                                                                                     <p>
                                                                                                                                                                                                                                                                       <div id="sponsors" class="content-section-container light-grey-background">
                                                                                                                                                                                                                                                                         <p align="center"><font size="6"><font color="#7c8081">Challenge 2 Complete!
                                                                                                                                                                                                                                                                               <p align="center"><font size="5">You should now know a bit about: 
-                                                                                                                                                                                                                                                                                  <p align="center"><img src="/assets/media/challenge2.png"/>
+                                                                                                                                                                                                                                                                                  <p align="center"><img src="{{ site.baseurl }}/assets/media/challenge2.png"/>
                                                                                                                                                                                                                                                                                     <table><tr><td valign="top">
                                                                                                                                                                                                                                                                                           <td width=33.3333%><u><font size="5"><center><a title="Challenge 1" href="http://www.hedgehogbot.co.uk/challenge1.html">← Challenge 1</a></u>
                                                                                                                                                                                                                                                                                                 <td width=33.3333%><u><font size="5"><center><a title="Hedgehog Bot" href="http://www.hedgehogbot.co.uk/">Home</a></u>
