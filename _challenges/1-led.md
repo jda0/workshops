@@ -25,6 +25,11 @@ header_bg: "#FAF5FF"
     3. Click **Tools&rarr;Board&rarr;Boards Manager...**, 
         then click **Type&rarr;Contributed** followed by 
         **esp8266 by ESP8266 Community**. Click **Install**.
+    4. [Download the required libraries]({{"/assets/releases/libraries.zip" | relative_url}}){: .download}
+    5. Extract the libraries and copy the folders inside to your Arduino libraries folder (on Windows, usually *Documents\Arduino\libraries*).
+
+        In Windows 8.1, your default Documents folder may be in OneDrive.
+        {: .requisite-warning .warning .compact}
 
 2.  #### Connect the board
     1. Connect the WeMos board to your PC using the microUSB cable.
@@ -61,7 +66,6 @@ header_bg: "#FAF5FF"
     1. turn off the LED for one second
     2. turn on the LED for one second
     3. repeat over and over!
-
 
     ```c 
     void setup() {

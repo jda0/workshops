@@ -10,7 +10,7 @@
     <article>
       <section class="hero article-hero" style="{% if page.header_bg %}background-color: {{page.header_bg}};{% endif %}">
         <div class="container hero-content" style="{% if page.header_img %}background-image: url({{ page.header_img | relative_url }}); {% endif %}">
-          <h1 class="hero-heading pad-bottom">{{page.title}}</h1>
+          <h1 class="hero-heading pad-bottom">{{page.title}}{% if page.beta %}<sup class="beta"> &beta;</sup>{% endif %}</h1>
           <p class="hero-subtitle pad-bottom">{{page.description}}</p>
           
           <dl class="article-summary-list">
@@ -50,8 +50,15 @@
           <p class="no-margin">From the kit, you'll need
           {% if page.requires_kit == "board-only" %} just your WeMos board and a microUSB cable.
           {% else %} everything: your WeMos board, microUSB cable, two motors and drivers, screen, 9V battery and adaptor, body and jumper cables.
-          {% endif %}<br>
+          {% endif %}
           If you need to build a kit, you can find a part list <a href="{{ "/parts" | relative_url}}">here</a>.</p>
+        </div>
+        {% endif %}
+        
+        {% if page.beta %}
+        <div class="requisite-warning warning beta-warning">
+          <h4>This workshop is in beta</h4>
+          It may be a little rough around the edges: <a href="https://twitter.com/{{site.twitter_username}}">tweet us</a> if there's any issues.
         </div>
         {% endif %}
 
@@ -72,8 +79,8 @@
         {{ content }}
 
         {% if page.completion %}
-        <ol>
-          <li class="completion">
+        <ol class="completion">
+          <li>
             <h4>Challenge Complete!</h3>
             <p>
               You should now know a bit about {% for c in page.completion %}{% if forloop.length > 1 and forloop.last %}and <strong>{{c}}</strong>{% else %}<strong>{{c}}</strong>{% if forloop.rindex0 != 1 %},{% endif %} {% endif %}{% endfor %}.
@@ -87,6 +94,8 @@
 
     {% include footer.html %}
 
+    <script src="{{"/assets/js/clipboard.min.js" | relative_url}}"></script>
+    <script src="{{"/assets/js/hh.clipboard.js" | relative_url}}"></script>
   </body>
 
 </html>

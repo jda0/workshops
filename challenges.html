@@ -8,7 +8,7 @@ permalink: /challenges/index.html
 <a href="{{ item.url | relative_url }}">
   <section class="hero article-hero" style="{% if item.header_bg %}background-color: {{item.header_bg}};{% endif %}">
     <div class="container hero-content" style="{% if item.header_img %}background-image: url({{ item.header_img | relative_url }}); {% endif %}">
-      <h1 class="hero-heading pad-bottom">{{item.title}}</h1>
+      <h1 class="hero-heading pad-bottom">{{item.title}}{% if item.beta %}<sup class="beta"> &beta;</sup>{% endif %}</h1>
       <p class="hero-subtitle pad-bottom">{{item.description}}</p>
       
       <dl class="article-summary-list">

@@ -3,6 +3,7 @@
 
 @import 'rouge';
 @import 'skeleton';
+@import "primer-tooltips/index.scss";
 
 body {
   margin: 0;
@@ -30,6 +31,10 @@ footer {
 
 a {
   text-decoration: none;
+}
+
+img {
+  border-radius: 4px;
 }
 
 nav ul {
@@ -76,6 +81,10 @@ em strong {
 
 code, pre {
   font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+}
+
+code {
+  overflow-x: auto;
 }
 
 .hero-content {
@@ -174,7 +183,7 @@ dl.article-summary-list {
 }
 
 .article-container > ol > li,
-.article-container .completion {
+.article-container .completion li {
   padding-top: 2rem;
   margin-bottom: 6rem;
   padding-left: 14rem;
@@ -185,11 +194,11 @@ dl.article-summary-list {
 }
 
 .article-container > ol > li h4,
-.article-container .completion h4 {
+.article-container .completion li h4 {
   margin-top: -1.1rem;
 }
 
-.article-container .completion::before {
+.article-container .completion li::before {
   content: '✓';
   font-size: 3rem;
   color: #99b850;
@@ -199,7 +208,27 @@ a.download {
   white-space: nowrap;
 }
 
+a.clippy {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  margin-left: -1.5em;
+  margin-right: 0.625em;
+  cursor: pointer;
+}
+
+pre {
+  position: relative;
+}
+
+pre > a.clippy {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 a.download:before,
+a.clippy i:before,
 i:before {
   content: '';
   display: inline-block;
@@ -211,7 +240,7 @@ i:before {
   background-size: 100% 100%;
 }
 
-a.download:before {
+a.download i:before {
   background-image: url({{ '/assets/media/ionicons_svg_ios-code-download.svg' | relative_url}});
   margin-right: 0.625em;
   width: 1.5em;
@@ -223,6 +252,23 @@ i.arduino-upload:before {
   margin-left: 0.125em;
   width: 1.25em;
   height: 1.25em;
+}
+
+code.clip-target {
+  padding-right: 1.875em;
+}
+
+a.clippy i:before {
+  cursor: pointer;
+  background-image: url({{ '/assets/media/octicon_svg_clippy.svg' | relative_url}});
+  margin-top: -0.2em;
+  width: 0.875em;
+  height: 1em;
+  opacity: 0.16;
+}
+
+a.clippy:hover i:before {
+  opacity: 0.4;
 }
 
 .hero {
@@ -349,7 +395,7 @@ i.arduino-upload:before {
   background-repeat: no-repeat;
   background-position: right center;
   background-size: auto 100%;
-  opacity: 0.4;
+  opacity: 0.15;
 }
 
 .requisite-warning.requisite-warning-kit-board-only:before {
@@ -360,9 +406,57 @@ i.arduino-upload:before {
   background-image: url({{"/assets/media/parts-all.png" | relative_url}});
 }
 
+.requisite-warning.warning.compact {
+  padding: 1.6rem 2.4rem;
+}
+
+.requisite-warning.warning,
+.requisite-warning.beta-warning {
+  background-color: unset;
+  border: 2px solid #f9b986;
+}
+
+.requisite-warning.warning h4 {
+  color: #f4934f;
+}
+
+.requisite-warning.beta-warning {
+  border-color: #bfa0fd;
+}
+
+.requisite-warning.beta-warning h4 {
+  color: #bfa0fd;
+}
+
+.requisite-warning.beta-warning:before {
+  content: 'β';
+  font-weight: 900;
+  font-style: italic;
+  font-size: 16rem;
+  text-align: right;
+  background: none;
+  padding-right: 3rem;
+  line-height: 8rem;
+  overflow: hidden;
+  user-select: none;
+}
+
+.requisite-warning + .requisite-warning {
+  margin-top: -3rem;
+}
+
 .ide code {
   border-color: #17a1a5;
   border-top-width: 4px;
+}
+
+.page h4 {
+  margin-top: 6rem;
+}
+
+sup.beta {
+  opacity: 0.6;
+  font-size: 0.5em;
 }
 
 @media (max-width: 1200px) {
@@ -381,16 +475,14 @@ i.arduino-upload:before {
     padding-bottom: 4.5rem;
   }
 
-  .article-container > ol {
-    margin-bottom: -4rem;
-  }
-
-  .article-container > ol > li::before {
+  .article-container > ol > li::before,
+  .article-container .completion li::before {
     margin-left: -12rem;
     margin-right: 6rem;
   }
 
-  .article-container > ol > li {
+  .article-container > ol > li,
+  .article-container .completion li {
     padding-left: 12rem;
     margin-bottom: 4rem;
   }
@@ -436,6 +528,10 @@ i.arduino-upload:before {
     list-style-type: katakana-iroha;
   }
 
+  .article-container .completion {
+    list-style: none;
+  }
+
   .article-container > ol > li::before {
     display: none;
   }
@@ -445,8 +541,12 @@ i.arduino-upload:before {
     padding-left: 1em;
   }
 
-  .requisite-warning.requisite-warning-kit-all:before,
-  .requisite-warning.requisite-warning-kit-board-only:before {
+  .article-container .completion li {
+    margin-left: unset;
+    padding-left: unset;
+  }
+
+  .requisite-warning:before {
     display: none;
   }
 }

@@ -2,6 +2,8 @@
 title: Clock
 description: Time to wake up! Turn your Hedgehog Bot into a runaway alarm clock and learn some more about how your Hedgehog Bot works.
 
+beta: true
+
 requires_workshop: Bot
 language: C++
 est_time: 30&mdash;90min
