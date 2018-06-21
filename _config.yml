@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Hedgehog Bot
 url: "http://hedgehogbot.digimakers.co.uk"
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/hedgehog" # the subpath of your site, e.g. /blog
 author: University of Bristol Outreach
 description: >
   Hedgehog Bot is a build-it-yourself IOT (Internet-of-Things) robot kit.
