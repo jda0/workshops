@@ -77,7 +77,7 @@
             <h4>Challenge Complete!</h3>
             <p>
               You should now know a bit about {% for c in page.completion %}{% if forloop.length > 1 and forloop.last %}and <strong>{{c}}</strong>{% else %}<strong>{{c}}</strong>{% if forloop.rindex0 != 1 %},{% endif %} {% endif %}{% endfor %}.
-              {% if nexturl %}When you're ready, continue to <a href="{{nexturl}}">the next challenge</a>.{% endif %}
+              {% if nexturl %}When you're ready, continue to <a href="{{nexturl | relative_url}}">the next challenge</a>.{% endif %}
             </p>
           </li>
         </ol>
