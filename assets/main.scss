@@ -79,7 +79,7 @@ em strong {
   color: #FF8C9A;
 }
 
-code, pre {
+code, pre, kbd {
   font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
 }
 
@@ -240,9 +240,10 @@ i:before {
   background-size: 100% 100%;
 }
 
-a.download i:before {
+a.download:before {
   background-image: url({{ '/assets/media/ionicons_svg_ios-code-download.svg' | relative_url}});
-  margin-right: 0.625em;
+  margin-right: 0.375em;
+  margin-top: -0.2em;
   width: 1.5em;
   height: 1.5em;
 }
@@ -408,6 +409,7 @@ a.clippy:hover i:before {
 
 .requisite-warning.warning.compact {
   padding: 1.6rem 2.4rem;
+  margin-bottom: 2.5rem;
 }
 
 .requisite-warning.warning,

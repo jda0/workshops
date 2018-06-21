@@ -42,7 +42,7 @@
           <h4>Requires a PC and a Hedgehog&nbsp;Bot</h4>
           If you've not built a Hedgehog Bot, complete the <a href="{{"/challenges/2-bot" | relative_url}}">Bot</a>&nbsp;challenge.
           {% if page.requires_workshop != "Bot" %}For this challenge, you'll also need to complete the <a href="{{req.url | relative_url}}">{{req.title}}</a>&nbsp;challenge{% endif %}
-          {% if page.requires_kit %}You'll also need {{page.requires_kit}}.{% endif %}
+          You'll also need a microUSB cable{% if page.requires_kit %}, and {{page.requires_kit}}{% endif %}.
         </div>
         {% elsif page.requires_kit %}
         <div class="requisite-warning requisite-warning-kit requisite-warning-kit-{{page.requires_kit}}">

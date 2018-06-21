@@ -3,17 +3,17 @@ title: LED
 description: This is the first challenge - learn some programming and create some Morse code! 
 
 requires_kit: board-only
-language: Arduino C
+language: C++
 est_time: 10&mdash;20min
 difficulty: Easy
 completion: 
   - LEDs
-  - Loops
-  - Delays
+  - loops
+  - delays
   - Morse code
 
 header_img: /assets/media/hedgehog-led-top.svg
-header_bg: "#FAF5FF"
+header_bg: "#FCFDF6"
 ---
 
 1.  #### Setup your computer

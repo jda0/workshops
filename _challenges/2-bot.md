@@ -1,19 +1,18 @@
 ---
 title: Bot
-description: This is the first challenge - learn some programming and create some Morse code! 
+description: This is the second challenge - build your robot and get it moving! 
 
 requires_kit: all
-language: Arduino C
+language: C++
 est_time: 10&mdash;20min
 difficulty: Easy
 completion: 
-  - LEDs
-  - Loops
-  - Delays
-  - Morse code
+  - wiring
+  - programming
+  - dancing
 
-header_img: /assets/media/hedgehog-led-top.svg
-header_bg: "#FAF5FF"
+header_img: /assets/media/hedgehog-bot-top.svg
+header_bg: "#F7FCFB"
 ---
 
 1.  #### Setup your computer
@@ -72,7 +71,7 @@ header_bg: "#FAF5FF"
     ```
     {: .ide}
 
-    1. Copy the code above and paste into the Arduino IDE
+    1. Copy the code above and paste into the Arduino IDE.
     2. Press the upload button <i class="arduino-upload"></i>. You'll see the 
         code compiling and uploading in the black box at the bottom. When it's 
         done you should see '*Done Uploading*' just above the black box.

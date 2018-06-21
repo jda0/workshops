@@ -11,7 +11,6 @@ difficulty: Intermediate
 completion: 
   - network time protocol
   - writing a program using multiple files
-  - a new language (C++)
   - namespaces
   - classes
   - structs
