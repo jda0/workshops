@@ -1,0 +1,37 @@
+---
+layout: default
+layout_fullwidth: true
+permalink: /challenges/index.html
+---
+
+{% for item in site.challenges %}
+<a href="{{ item.url | relative_url }}">
+  <section class="hero article-hero" style="{% if item.header_bg %}background-color: {{item.header_bg}};{% endif %}">
+    <div class="container hero-content" style="{% if item.header_img %}background-image: url({{ item.header_img | relative_url }}); {% endif %}">
+      <h1 class="hero-heading pad-bottom">{{item.title}}</h1>
+      <p class="hero-subtitle pad-bottom">{{item.description}}</p>
+      
+      <dl class="article-summary-list">
+        {% if item.language %}
+        <div>
+          <dt>Language</dt>
+          <dd>{{item.language}}</dd>
+        </div>
+        {% endif %}
+        {% if item.est_time %}
+        <div>
+          <dt>Est. Time</dt>
+          <dd>{{item.est_time}}</dd>
+        </div>
+        {% endif %}
+        {% if item.difficulty %}
+        <div>
+          <dt>Difficulty</dt>
+          <dd>{{item.difficulty}}</dd>
+        </div>
+        {% endif %}
+      </dl>
+    </div>
+  </section>
+</a>
+{% endfor %}
