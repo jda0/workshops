@@ -14,8 +14,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Hedgehog Bot
-url: "https://jamesin.space"
-baseurl: "/hedgehog" # the subpath of your site, e.g. /blog
+url: "http://hedgehogbot.digimakers.co.uk"
+baseurl: "" # the subpath of your site, e.g. /blog
 author: University of Bristol Outreach
 description: >
   A build-it-yourself IOT (Internet-of-Things) robot kit.
