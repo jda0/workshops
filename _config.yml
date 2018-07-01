@@ -18,14 +18,11 @@ url: "http://hedgehogbot.digimakers.co.uk"
 baseurl: "" # the subpath of your site, e.g. /blog
 author: University of Bristol Outreach
 description: >
-  Hedgehog Bot is a build-it-yourself IOT (Internet-of-Things) robot kit.
+  A build-it-yourself IOT (Internet-of-Things) robot kit.
   Designed for anyone aged 10 and above to help learn how to program and to
   build electronics.
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
 twitter_username: Digi_Makers
+facebook_admin_id: 732762314
 github_username: MVSE-Outreach
 keywords:
 - arduino tutorial
@@ -38,6 +35,18 @@ keywords:
 - bristol
 - digimakers
 - outreach
+
+collections:
+  challenges:
+    output: true
+    permalink: /challenges/:path
+
+defaults:
+  - scope:
+      path: ""
+      type: challenges
+    values:
+      layout: challenge
 
 # Build settings
 markdown: kramdown

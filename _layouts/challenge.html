@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <article>
+      <section class="hero article-hero" style="{% if page.header_bg %}background-color: {{page.header_bg}};{% endif %}">
+        <div class="container hero-content" style="{% if page.header_img %}background-image: url({{ page.header_img | relative_url }}); {% endif %}">
+          <h1 class="hero-heading pad-bottom">{{page.title}}{% if page.beta %}<sup class="beta"> &beta;</sup>{% endif %}</h1>
+          <p class="hero-subtitle pad-bottom">{{page.description}}</p>
+          
+          <dl class="article-summary-list">
+            {% if page.language %}
+            <div>
+              <dt>Language</dt>
+              <dd>{{page.language}}</dd>
+            </div>
+            {% endif %}
+            {% if page.est_time %}
+            <div>
+              <dt>Est. Time</dt>
+              <dd>{{page.est_time}}</dd>
+            </div>
+            {% endif %}
+            {% if page.difficulty %}
+            <div>
+              <dt>Difficulty</dt>
+              <dd>{{page.difficulty}}</dd>
+            </div>
+            {% endif %}
+          </dl>
+        </div>
+      </section>
+      <main class="container article-container">
+        {% if page.requires_workshop %}
+        {% assign req = site.challenges | where: "title",page.requires_workshop | first %}
+        <div class="requisite-warning">
+          <h4>Requires a PC and a Hedgehog&nbsp;Bot</h4>
+          If you've not built a Hedgehog Bot, complete the <a href="{{"/challenges/2-bot" | relative_url}}">Bot</a>&nbsp;challenge.
+          {% if page.requires_workshop != "Bot" %}For this challenge, you'll also need to complete the <a href="{{req.url | relative_url}}">{{req.title}}</a>&nbsp;challenge{% endif %}
+          You'll also need a microUSB cable{% if page.requires_kit %}, and {{page.requires_kit}}{% endif %}.
+        </div>
+        {% elsif page.requires_kit %}
+        <div class="requisite-warning requisite-warning-kit requisite-warning-kit-{{page.requires_kit}}">
+          <h4>Requires a PC and a Hedgehog Bot kit</h4>
+          <p class="no-margin">From the kit, you'll need
+          {% if page.requires_kit == "board-only" %} just your WeMos board and a microUSB cable.
+          {% else %} everything: your WeMos board, microUSB cable, two motors and drivers, screen, 9V battery and adaptor, body and jumper cables.
+          {% endif %}
+          If you need to build a kit, you can find a part list <a href="{{ "/parts" | relative_url}}">here</a>.</p>
+        </div>
+        {% endif %}
+        
+        {% if page.beta %}
+        <div class="requisite-warning warning beta-warning">
+          <h4>This workshop is in beta</h4>
+          It may be a little rough around the edges: <a href="https://twitter.com/{{site.twitter_username}}">tweet us</a> if there's any issues.
+        </div>
+        {% endif %}
+
+        {% capture the_collection %}{{page.collection}}{% endcapture %}
+        {% if page.collection %}
+          {% assign  document = site[the_collection]  %}
+        {% endif %}
+        {% for links in document  %}
+          {% if links.title == page.title %}
+            {% unless forloop.last %}
+              {% assign next = document[forloop.index] %}
+              {% assign nexturl = next.url %}
+            {% endunless %}
+          {% endif %}
+          {% assign prev = links %}
+        {% endfor %}
+
+        {{ content }}
+
+        {% if page.completion %}
+        <ol class="completion">
+          <li>
+            <h4>Challenge Complete!</h3>
+            <p>
+              You should now know a bit about {% for c in page.completion %}{% if forloop.length > 1 and forloop.last %}and <strong>{{c}}</strong>{% else %}<strong>{{c}}</strong>{% if forloop.rindex0 != 1 %},{% endif %} {% endif %}{% endfor %}.
+              {% if nexturl %}When you're ready, continue to <a href="{{nexturl | relative_url}}">the next challenge</a>.{% endif %}
+            </p>
+          </li>
+        </ol>
+        {% endif %}
+      </main>
+    </article>
+
+    {% include footer.html %}
+
+    <script src="{{"/assets/js/clipboard.min.js" | relative_url}}"></script>
+    <script src="{{"/assets/js/hh.clipboard.js" | relative_url}}"></script>
+  </body>
+
+</html>
