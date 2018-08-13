@@ -5,8 +5,8 @@ alt_v1: https://docs.google.com/presentation/d/1vFUuMN42MDI-51wy2UWQYLuFqFkslmOj
 
 requires_workshop: Bot
 language: C++
-est_time: 10&mdash;20min
-difficulty: Easy
+est_time: 30&mdash;60min
+difficulty: Intermediate
 completion: 
   - if statements
   - networking

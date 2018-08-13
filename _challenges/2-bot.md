@@ -5,8 +5,8 @@ alt_v1: https://docs.google.com/presentation/d/1WIN4TMjElcPm9t5xDhwrXADAptzXfMIS
 
 requires_kit: all
 language: C++
-est_time: 10&mdash;20min
-difficulty: Easy
+est_time: 30&mdash;60min
+difficulty: Intermediate
 completion: 
   - wiring
   - programming

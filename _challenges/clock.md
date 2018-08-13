@@ -6,8 +6,8 @@ beta: true
 
 requires_workshop: Bot
 language: C++
-est_time: 30&mdash;90min
-difficulty: Intermediate
+est_time: 60&mdash;120min
+difficulty: Tricky
 completion: 
   - network time protocol
   - writing a program using multiple files

@@ -5,7 +5,7 @@ alt_v1: https://docs.google.com/presentation/d/1DZbnwOQN-aU16YOYuVppmZkEunN-LtYr
 
 requires_kit: board-only
 language: C++
-est_time: 10&mdash;20min
+est_time: 15&mdash;45min
 difficulty: Easy
 completion: 
   - LEDs
