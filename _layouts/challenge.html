@@ -51,7 +51,7 @@
           {% if page.requires_kit == "board-only" %} just your WeMos board and a microUSB cable.
           {% else %} everything: your WeMos board, microUSB cable, two motors and drivers, screen, 9V battery and adaptor, body and jumper cables.
           {% endif %}
-          If you need to build a kit, you can find a part list <a href="{{ "/parts" | relative_url}}">here</a>.</p>
+          If you need to build a kit, or you don't recognise something, you can find a part list <a href="{{ "/parts" | relative_url}}">here</a>.</p>
         </div>
         {% endif %}
         
@@ -79,9 +79,10 @@
               {% assign next = document[forloop.index] %}
               {% assign nexturl = next.url %}
             {% endunless %}
+            {% assign prev = links %}
           {% endif %}
-          {% assign prev = links %}
         {% endfor %}
+        {% assign core_count = document | where_exp: 'item', 'item.core_challenge' | size %}
 
         {{ content }}
 
@@ -92,10 +93,20 @@
             <p>
               You should now know a bit about {% for c in page.completion %}{% if forloop.length > 1 and forloop.last %}and <strong>{{c}}</strong>{% else %}<strong>{{c}}</strong>{% if forloop.rindex0 != 1 %},{% endif %} {% endif %}{% endfor %}.
               {% if nexturl %}When you're ready, continue to <a href="{{nexturl | relative_url}}">the next challenge</a>.{% endif %}
+              <br>
             </p>
           </li>
         </ol>
         {% endif %}
+
+        {% if nexturl %}
+        <a href={{nexturl | relative_url}} class="u-pull-right a-next">
+          <span>Next</span>
+          <h4>{% if next.core_challenge %}<sup class="beta"> {{next.core_challenge}}.&ensp;</sup>{% endif %}{{next.title}}</h4>
+        </a>
+        {% endif %}
+
+        </a>
       </main>
     </article>
 
@@ -103,6 +114,7 @@
 
     <script src="{{"/assets/js/clipboard.min.js" | relative_url}}"></script>
     <script src="{{"/assets/js/hh.clipboard.js" | relative_url}}"></script>
+    <script src="{{"/assets/js/hh.spoiler.js" | relative_url}}"></script>
   </body>
 
 </html>

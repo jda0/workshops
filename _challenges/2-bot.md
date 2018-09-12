@@ -3,6 +3,7 @@ title: Bot
 description: This is the second challenge - build your robot and get it moving! 
 alt_v1: https://docs.google.com/presentation/d/1WIN4TMjElcPm9t5xDhwrXADAptzXfMISy4myXoclRKg/pub
 
+core_challenge: 2
 requires_kit: all
 language: C++
 est_time: 30&mdash;60min
@@ -18,6 +19,9 @@ header_bg: "#F7FCFB"
 
 1.  #### Setup your computer
     If you've not installed the Arduino IDE and required libraries, complete *Setup your computer* [from the first challenge]({{"challenges/1-led" | relative_url}}).
+
+      At DigiMakers events, this has already been done for you.
+      {: .requisite-warning .warning .compact}
 
 1.  #### Build the body
     Follow the video below. Ask a helper if you're stuck or a body part is hard to click in to another part.

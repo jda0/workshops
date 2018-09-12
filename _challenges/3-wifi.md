@@ -3,6 +3,7 @@ title: Wifi
 description: This is the third challenge - time to control your robot wirelessly!
 alt_v1: https://docs.google.com/presentation/d/1vFUuMN42MDI-51wy2UWQYLuFqFkslmOjGgieC3hui0A/pub
 
+core_challenge: 3
 requires_workshop: Bot
 language: C++
 est_time: 30&mdash;60min

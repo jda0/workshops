@@ -3,6 +3,7 @@ title: LED
 description: This is the first challenge - learn some programming and create some Morse code! 
 alt_v1: https://docs.google.com/presentation/d/1DZbnwOQN-aU16YOYuVppmZkEunN-LtYr8j3dcDj1nHI/pub
 
+core_challenge: 1
 requires_kit: board-only
 language: C++
 est_time: 15&mdash;45min
@@ -18,6 +19,8 @@ header_bg: "#FCFDF6"
 ---
 
 1.  #### Setup your computer
+
+    {: .spoiler}
     1. Download Arduino IDE from [arduino.cc](https://www.arduino.cc/en/Main/Software),
         install and open it. 
     2. Click **File&rarr;Preferences**, and paste 
