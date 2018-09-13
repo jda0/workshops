@@ -10,7 +10,7 @@
     <article>
       <section class="hero article-hero" style="{% if page.header_bg %}background-color: {{page.header_bg}};{% endif %}">
         <div class="container hero-content" style="{% if page.header_img %}background-image: url({{ page.header_img | relative_url }}); {% endif %}">
-          <h1 class="hero-heading pad-bottom">{{page.title}}{% if page.beta %}<sup class="beta"> &beta;</sup>{% endif %}</h1>
+          <h1 class="hero-heading pad-bottom">{% if page.core_challenge %}<sup class="beta"> {{page.core_challenge}}. </sup>{% endif %}{{page.title}}{% if page.beta %}<sup class="beta"> &beta;</sup>{% endif %}</h1>
           <p class="hero-subtitle pad-bottom">{{page.description}}</p>
           
           <dl class="article-summary-list">
