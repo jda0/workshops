@@ -35,7 +35,7 @@ header_bg: "#FCFDF6"
         In Windows 8.1, your default Documents folder may be in OneDrive.
         {: .requisite-warning .warning .compact}
         
-        If using macOS, or your hedgehog is not recognised, [Download the CH341 driver]({{"/assets/releases/libraries.zip" | relative_url}}){: .download} 
+        If using macOS, or your hedgehog is not recognised, [Download the CH341 driver](https://wiki.wemos.cc/downloads){: .download} 
         {: .requisite-warning .warning .compact}
 
 2.  #### Connect the board
