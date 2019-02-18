@@ -25,7 +25,7 @@ header_bg: "#F7FCFB"
 
 1.  #### Build the body
     Follow the video below. Ask a helper if you're stuck or a body part is hard to click in to another part.
-    <iframe width="800" height="415" class="video-iframe u-max-full-width" src="https://www.youtube.com/embed/TCppJ16i6oc" frameborder="0" allowfullscreen></iframe>
+    <div class="video-iframe" data-src="https://www.youtube.com/embed/TCppJ16i6oc"><iframe width="800" height="415" class="u-max-full-width" src="https://www.youtube.com/embed/TCppJ16i6oc" frameborder="0" allowfullscreen></iframe></div>
 
 2.  #### Wiring the screen
     Plug 4 wires from the WeMos into the back of the screen. The screen should still be mounted on the body. *You don't need to use the exact wire colours.*

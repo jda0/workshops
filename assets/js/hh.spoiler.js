@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     spoilerLink.setAttribute('class', 'requisite-warning warning compact spoiler-link')
     spoilerLink.setAttribute('data-spoil', spoilern.toString())
     spoilerLink.setAttribute('href', 'javascript:void(0)')
-    spoilerLink.innerHTML = el.getAttribute('data-spoiler-text') || 'At DigiMakers events, this has already been done for you. <em>Click to show anyway</em>'
+    spoilerLink.innerHTML = el.getAttribute('data-spoiler-text') || 'At DigiMakers events, this has already been done for you. <em class="hidden-print">Click to show anyway</em>'
     spoilerLink.addEventListener('click', e => {
       // @ts-ignore
       let link = e.target

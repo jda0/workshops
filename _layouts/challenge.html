@@ -100,7 +100,7 @@
         {% endif %}
 
         {% if nexturl %}
-        <a href={{nexturl | relative_url}} class="u-pull-right a-next">
+        <a href={{nexturl | relative_url}} class="u-pull-right a-next hidden-print">
           <span>Next</span>
           <h4>{% if next.core_challenge %}<sup class="beta"> {{next.core_challenge}}.&ensp;</sup>{% endif %}{{next.title}}</h4>
         </a>
