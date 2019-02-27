@@ -41,8 +41,11 @@ header_bg: "#FCFDF6"
 2.  #### Connect the board
     1. Connect the WeMos board to your PC using the microUSB cable.
     2. Click **Tools&rarr;Board&rarr;Wemos D1 R2 & Mini**.
-    2. Click **Tools&rarr;Port&rarr;COM*x***, where ***x*** is any number 
-        greater than 1.
+
+        The board may also be called **LOLIN(Wemos) D1 R2 & Mini**.
+        {: .requisite-warning .warning .compact}
+
+    3. Click **Tools&rarr;Port&rarr;COM*x***, where ***x*** is any number greater than 1.
 
 3.  #### LEDs and Loops
     A LED (Light Emitting Diode) is a little light which is built into your 
