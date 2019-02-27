@@ -25,8 +25,10 @@ header_bg: "#FAF5FF"
 
 2.  #### Open **src/src.ino** in Arduino IDE
     You can also open the top folder in any PlatformIO-compatible IDE (such as 
-    Visual Studio Code + the PlatformIO IDE extension), and start in 
-    **src/hh_clock.cpp**.
+    Visual Studio Code + the PlatformIO IDE extension - *recommended*), and start in 
+    **src/hh_clock.cpp**. There's instructions on setting up Visual Studio Code 
+    [in the first challenge](1-led) - just skip downloading and opening the starter 
+    workspace for that workshop.
 
 3.  #### Follow the instructions, and complete the TODOs, from there
 

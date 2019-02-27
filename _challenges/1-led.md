@@ -20,9 +20,13 @@ header_bg: "#FCFDF6"
 
 1.  #### Setup your computer
 
+    You have two options: Arduino IDE is very simple&mdash;and therefore better for beginners and the very young, hence why we install it on our laptops&mdash;but we generally recommend Visual&nbsp;Studio&nbsp;Code.
+
+    ##### Option 1: Arduino IDE
+
     {: .spoiler}
     1. Download Arduino IDE from [arduino.cc](https://www.arduino.cc/en/Main/Software),
-        install and open it. 
+        install and open it.
     2. Click **File&rarr;Preferences**, and paste 
         `http://arduino.esp8266.com/stable/package_esp8266com_index.json` into 
         **Additional Boards Manager URLs**.
@@ -37,6 +41,24 @@ header_bg: "#FCFDF6"
         
         If using macOS, or your hedgehog is not recognised, [Download the CH341 driver](https://wiki.wemos.cc/downloads){: .download} 
         {: .requisite-warning .warning .compact}
+
+    ##### Option 2: Visual Studio Code
+
+    {: .spoiler data-spoiler-text="<em class="hidden-print">Click to show instructions</em>"}
+    1. Download Visual Studio Code from [code.visualstudio.com](https://code.visualstudio.com), install and open it.
+    2. Open the Extensions sidebar <i class="vscode-extensions"></i>.
+    3. Search for and install the extension **PlatformIO IDE**.
+    4. [Download the starter workspace]({{"/assets/releases/hedgehog-starter.zip" | relative_url}}){: .download} and extract it somewhere.
+    5. In Visual Studio Code, click **File&rarr;Open Folder** and open the extracted starter. 
+    6. From the Explorer sidebar (pages icon), open **src/main.cpp**.
+    7. We also recommend changing a few settings to make Visual Studio Code easier to use for beginners:
+    
+        - If you don't like the color theme, click the settings cog at the bottom of the activity bar (next to the sidebar, with the big icons) and click **Color Theme**.
+        - In Settings (**File&rarr;Preferences&rarr;Settings**), Set **C_Cpp: Autocomplete** to **disabled**.
+        - Right-click the top of the sidebar and choose **Hide Sidebar**.
+        - Right-click the activity bar and choose **Hide Activity Bar**.
+    
+    8. Connect the WeMos board to your PC using the microUSB cable, , **and skip to step 3**.
 
 2.  #### Connect the board
     1. Connect the WeMos board to your PC using the microUSB cable.

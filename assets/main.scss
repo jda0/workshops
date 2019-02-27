@@ -276,6 +276,13 @@ a.download:before {
   height: 1.5em;
 }
 
+i.vscode-extensions:before {
+  background-image: url({{ '/assets/media/icons_svg_vscode-extensions.svg' | relative_url}});
+  margin-left: 0.125em;
+  width: 1.25em;
+  height: 1.25em;
+}
+
 i.arduino-upload:before {
   background-image: url({{ '/assets/media/icons_svg_arduino-upload.svg' | relative_url}});
   margin-left: 0.125em;
@@ -768,8 +775,12 @@ sup.beta {
     content: url({{ '/assets/media/ionicons_svg_ios-code-download.svg' | relative_url}});
   }
 
+  i.vscode-extensions:before {
+    content: url({{ '/assets/media/icons_svg_vscode-extensions.svg' | relative_url }});
+  }
+
   i.arduino-upload:before {
-    content: url({{ '/assets/media/icons_svg_arduino-upload.svg' | relative_url}});
+    content: url({{ '/assets/media/icons_svg_arduino-upload.svg' | relative_url }});
   }
 
   .article-container > ol > li,
