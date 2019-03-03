@@ -23,6 +23,13 @@ header_bg: "#FAF5FF"
 1.  #### Download and unzip the starter template
     [Download from GitHub](https://github.com/jda0/hedgehog-clock/releases/latest){: .download}
 
+2.  #### Tidy up
+    If you're using Arduino IDE, copy the folders inside **lib/** to your Arduino libraries folder (on Windows, usually *Documents\Arduino\libraries*).
+    You don't need to do this if you're using a PlatformIO-compatible IDE such as Visual Studio Code.
+
+    In Windows 8.1, your default Documents folder may be in OneDrive. For more troubleshooting, see [setup]({{ '1-led#setup-your-computer' | relative_url }}).
+    {: .requisite-warning .warning .compact}
+
 2.  #### Open **src/src.ino** in Arduino IDE
     You can also open the top folder in any PlatformIO-compatible IDE (such as 
     Visual Studio Code + the PlatformIO IDE extension - *recommended*), and start in 

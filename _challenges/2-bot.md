@@ -19,6 +19,7 @@ header_bg: "#F7FCFB"
 
 1.  #### Setup your computer
     If you've not installed the Arduino IDE and required libraries, complete *Setup your computer* [from the first challenge]({{"challenges/1-led" | relative_url}}).
+    **Please double check that your board works and can run the Blink code before continuing.**
 
       At DigiMakers events, this has already been done for you.
       {: .requisite-warning .warning .compact}
@@ -82,6 +83,8 @@ header_bg: "#F7FCFB"
         done you should see '*Done Uploading*' just above the black box.
 
     If the screen isn't displaying or the motors aren't moving ask a helper to check your wiring. 
+    Wiring the motors incorrectly is also the №1 cause of `espcomm_sync_failed` errors.
+    If it's not clear why you're getting this error, sometimes plugging in another board and uploading to that - or restarting your computer - then retrying with your hedgehog works.
 
 7.  #### Dance!
     Now you've built your bot it's time to make it dance!

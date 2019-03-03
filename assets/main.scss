@@ -551,6 +551,10 @@ a.clippy:hover i:before {
   cursor: pointer;
 }
 
+ul.spoiler, .spoiler ul {
+  list-style-position: unset;
+}
+
 .ide code {
   border-color: #17a1a5;
   border-top-width: 4px;

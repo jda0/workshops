@@ -39,7 +39,7 @@ header_bg: "#FCFDF6"
         In Windows 8.1, your default Documents folder may be in OneDrive.
         {: .requisite-warning .warning .compact}
         
-        If using macOS, or your hedgehog is not recognised, [Download the CH341 driver](https://wiki.wemos.cc/downloads){: .download} 
+        If using macOS, or your hedgehog is not recognised by Windows, [Download the CH341 driver](https://wiki.wemos.cc/downloads){: .download}. Support for CH340/CH341 is included in most versions of the Linux kernel, so there does not appear to be a driver for this platform.
         {: .requisite-warning .warning .compact}
 
     ##### Option 2: Visual Studio Code
@@ -48,17 +48,23 @@ header_bg: "#FCFDF6"
     1. Download Visual Studio Code from [code.visualstudio.com](https://code.visualstudio.com), install and open it.
     2. Open the Extensions sidebar <i class="vscode-extensions"></i>.
     3. Search for and install the extension **PlatformIO IDE**.
-    4. [Download the starter workspace]({{"/assets/releases/hedgehog-starter.zip" | relative_url}}){: .download} and extract it somewhere.
-    5. In Visual Studio Code, click **File&rarr;Open Folder** and open the extracted starter. 
-    6. From the Explorer sidebar (pages icon), open **src/main.cpp**.
-    7. We also recommend changing a few settings to make Visual Studio Code easier to use for beginners:
+    4. Wait for the panel that pops up at the bottom of the screen to ask you to restart VS Code, and do so.
+    5. [Download the starter workspace]({{"/assets/releases/hedgehog-starter.zip" | relative_url}}){: .download} and extract it somewhere.
+    6. In Visual Studio Code, click **File&rarr;Open Folder** and open the extracted starter. 
+    7. If you don't see a row of icons in the bottom-left corner after a few seconds, including a tick and upload icon <i class="arduino-upload"></i>, restart VS Code.
+    8. From the Explorer sidebar (pages icon), open **src/main.cpp**.
+    9. We also recommend changing a few settings to make Visual Studio Code easier to use for beginners:
     
-        - If you don't like the color theme, click the settings cog at the bottom of the activity bar (next to the sidebar, with the big icons) and click **Color Theme**.
+        - If you don't like the color theme, click the settings cog at the bottom of the activity bar (next to the sidebar, with the big icons), click **Color Theme** and choose an option from the pop-up list.
         - In Settings (**File&rarr;Preferences&rarr;Settings**), Set **C_Cpp: Autocomplete** to **disabled**.
         - Right-click the top of the sidebar and choose **Hide Sidebar**.
         - Right-click the activity bar and choose **Hide Activity Bar**.
+        - Nearly all notifications can be disabled by clicking _Don't Show Again_ when they pop up.
     
-    8. Connect the WeMos board to your PC using the microUSB cable, , **and skip to step 3**.
+    10. Connect the WeMos board to your PC using the microUSB cable, **and skip to step 3**.
+        
+        If using macOS, or your hedgehog is not recognised when you come to upload your code, [Download the CH341 driver](https://wiki.wemos.cc/downloads){: .download}.
+        {: .requisite-warning .warning .compact}
 
 2.  #### Connect the board
     1. Connect the WeMos board to your PC using the microUSB cable.
@@ -121,6 +127,27 @@ header_bg: "#FCFDF6"
     4. Now try changing the size of the delays - what do you think will happen 
         if the delays are 2000 milliseconds instead of 1000? Upload the code to 
         see! 
+
+    ##### Troubleshooting
+
+    {: .spoiler data-spoiler-text="<em class="hidden-print">Click to show</em>"}
+    - If you see a long error in Arduino IDE about stuff being missing or undeclared, double check
+      the board in the Tools menu and that **esp8266** is installed in
+      **Boards Manager**.
+
+    - If you see `espcomm_sync failed`, your computer and board are struggling
+      to talk to each other - try a different USB port, restarting your
+      computer or asking a helper, who may replace your board.
+
+    - If you receive an error _Please specify 'upload_port' for environment or use global '--upload-port' option_, your hedgehog has not been recognised: try unplugging it
+      and plugging it back in (using a different USB port if you can).
+
+    - PlatformIO might get confused on some Windows laptops (like versions of the Lenovo Thinkpad X1), and auto-detect your Hedgehog on the wrong COM port. To fix this,
+      open Device Manager and look for **USB-SERIAL CH340 (COM*x*)** under **Ports (COM & LPT)** (_x_ can be any number). Add a line to `platformio.ini` that reads
+      `upload_port = COMx` (where _x_ is the number you saw).
+      
+    - If you see an error when you try to upload your code that reads "_You are not logged in. Please log in to PIO Account..._", double check you tapped the upload icon 
+      <i class="arduino-upload"></i> and not the "_PlatformIO: Upload to remote device_" icon next to it.
 
 5.  #### Morse Code
     Now you know how to change the speed of flashing of your LED, let's use that 
