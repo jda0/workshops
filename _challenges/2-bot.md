@@ -85,6 +85,7 @@ header_bg: "#F7FCFB"
     If the screen isn't displaying or the motors aren't moving ask a helper to check your wiring. 
     Wiring the motors incorrectly is also the №1 cause of `espcomm_sync_failed` errors.
     If it's not clear why you're getting this error, sometimes plugging in another board and uploading to that - or restarting your computer - then retrying with your hedgehog works.
+    {: .requisite-warning .warning .compact}
 
 7.  #### Dance!
     Now you've built your bot it's time to make it dance!

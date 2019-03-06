@@ -27,20 +27,22 @@ header_bg: "#FCFDF6"
     {: .spoiler}
     1. Download Arduino IDE from [arduino.cc](https://www.arduino.cc/en/Main/Software),
         install and open it.
-    2. Click **File&rarr;Preferences**, and paste 
+    2. Click **File&rarr;Preferences** (**Arduino&rarr;Preferences** on Mac), and paste 
         `http://arduino.esp8266.com/stable/package_esp8266com_index.json` into 
         **Additional Boards Manager URLs**.
     3. Click **Tools&rarr;Board&rarr;Boards Manager...**, 
         then click **Type&rarr;Contributed** followed by 
         **esp8266 by ESP8266 Community**. Click **Install**.
     4. [Download the required libraries]({{"/assets/releases/libraries.zip" | relative_url}}){: .download}
-    5. Extract the libraries and copy the folders inside to your Arduino libraries folder (on Windows, usually *Documents\Arduino\libraries*).
+    5. Extract the libraries and copy the folders inside to your Arduino libraries folder (usually *Documents\Arduino\libraries*).
 
         In Windows 8.1, your default Documents folder may be in OneDrive.
         {: .requisite-warning .warning .compact}
         
         If using macOS, or your hedgehog is not recognised by Windows, [Download the CH341 driver](https://wiki.wemos.cc/downloads){: .download}. Support for CH340/CH341 is included in most versions of the Linux kernel, so there does not appear to be a driver for this platform.
         {: .requisite-warning .warning .compact}
+
+    6. Click **Tools&rarr;Upload Speed** and choose **115200**.
 
     ##### Option 2: Visual Studio Code
 
@@ -68,9 +70,9 @@ header_bg: "#FCFDF6"
 
 2.  #### Connect the board
     1. Connect the WeMos board to your PC using the microUSB cable.
-    2. Click **Tools&rarr;Board&rarr;Wemos D1 R2 & Mini**.
+    2. Click **Tools&rarr;Board&rarr;LOLIN(Wemos) D1 R2 & Mini**.
 
-        The board may also be called **LOLIN(Wemos) D1 R2 & Mini**.
+        The board may also be called **Wemos D1 R2 & Mini**.
         {: .requisite-warning .warning .compact}
 
     3. Click **Tools&rarr;Port&rarr;COM*x***, where ***x*** is any number greater than 1.
@@ -142,7 +144,7 @@ header_bg: "#FCFDF6"
     - If you receive an error _Please specify 'upload_port' for environment or use global '--upload-port' option_, your hedgehog has not been recognised: try unplugging it
       and plugging it back in (using a different USB port if you can).
 
-    - PlatformIO might get confused on some Windows laptops (like versions of the Lenovo Thinkpad X1), and auto-detect your Hedgehog on the wrong COM port. To fix this,
+    - Visual Studio Code might get confused on some Windows laptops (like versions of the Lenovo Thinkpad X1), and auto-detect your Hedgehog on the wrong COM port. To fix this,
       open Device Manager and look for **USB-SERIAL CH340 (COM*x*)** under **Ports (COM & LPT)** (_x_ can be any number). Add a line to `platformio.ini` that reads
       `upload_port = COMx` (where _x_ is the number you saw).
       
