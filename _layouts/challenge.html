@@ -13,26 +13,26 @@
           <h1 class="hero-heading pad-bottom">{% if page.core_challenge %}<sup class="beta"> {{page.core_challenge}}. </sup>{% endif %}{{page.title}}{% if page.beta %}<sup class="beta"> &beta;</sup>{% endif %}</h1>
           <p class="hero-subtitle pad-bottom">{{page.description}}</p>
           
-          <dl class="article-summary-list">
+          <div class="article-summary-list">
             {% if page.language %}
-            <div>
+            <dl>
               <dt>Language</dt>
               <dd>{{page.language}}</dd>
-            </div>
+            </dl>
             {% endif %}
             {% if page.est_time %}
-            <div>
+            <dl>
               <dt>Est. Time</dt>
               <dd>{{page.est_time}}</dd>
-            </div>
+            </dl>
             {% endif %}
             {% if page.difficulty %}
-            <div>
+            <dl>
               <dt>Difficulty</dt>
               <dd>{{page.difficulty}}</dd>
-            </div>
+            </dl>
             {% endif %}
-          </dl>
+          </div>
         </div>
       </section>
       <main class="container article-container">
