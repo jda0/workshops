@@ -28,13 +28,14 @@ header {
 footer {
   padding-top: 8rem;
   padding-bottom: 6rem;
-  color: #757575;
+  color: #545454;
   user-select: none;
   -moz-user-select: none;
 }
 
 a {
   text-decoration: none;
+  color: #1757ab;
 }
 
 img {
@@ -209,7 +210,7 @@ dl.article-summary-list {
 
 .article-container > ol > li::before {
   content: counter(art-ol-counter);
-  color: #757575;
+  color: #545454;
 }
 
 .article-container > ol > li,
@@ -379,7 +380,7 @@ a.clippy:hover i:before {
 
 .hero-subtitle,
 .hero-subtitle a {
-  color: #757575;
+  color: #545454;
 }
 
 .hero.article-hero .hero-subtitle {
@@ -390,7 +391,7 @@ a.clippy:hover i:before {
 .section-header {
   margin-top: 6rem;
   margin-bottom: 8px;
-  color: #757575;
+  color: #545454;
   text-transform: uppercase;
   letter-spacing: .1rem;
 }
@@ -829,7 +830,7 @@ sup.beta {
 
   .article-container > ol > li > h4::before {
     content: counter(art-ol-counter);
-    color: #757575;
+    color: #545454;
   }
 
   .article-container > .completion li > h4::before {
