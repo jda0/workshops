@@ -144,17 +144,17 @@ code {
   float: none;
 }
 
-dl.article-summary-list:after {
+.article-summary-list:after {
   content: '';
   display: table;
   clear: left;
 }
 
-dl.article-summary-list {
+.article-summary-list {
   margin: 0;
 }
 
-.article-summary-list > div {
+.article-summary-list > dl {
   float: left;
   margin-right: 2.4rem;
 }
