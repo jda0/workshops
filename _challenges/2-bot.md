@@ -31,25 +31,37 @@ header_bg: "#F7FCFB"
 2.  #### Wiring the screen
     Plug 4 wires from the WeMos into the back of the screen. The screen should still be mounted on the body. *You don't need to use the exact wire colours.*
 
-    ![VIN&rarr;+ GND&rarr;- D4&rarr;IN1 D3&rarr;IN2 D0&rarr;IN3 RX&rarr;IN4]({{"/assets/media/oledfritzing.png" | relative_url}}){: .u-max-full-width}
+      If using the WeMos D1 WiFi, `SCL` and `SDA` are on the opposite side and are labelled `SCL/D3` and `SDA/D4`. *If you're not sure which board you're using, ask -- but only the D1 WiFi has D1 WiFi written on it*.
+      {: .requisite-warning .warning .compact}
+
+    ![GND&rarr;GND 3V3&rarr;VCC SCL&rarr;SCL SDA&rarr;SDA (near A0)]({{"/assets/media/oledfritzing.png" | relative_url}}){: .u-max-full-width}
 
 3.  #### Wiring the left motor
     Plug 6 wires from the WeMos into the left motor driver. If you look at the bot with the **screen facing you**, the driver is on the left side of the body. *You don't need to use the exact wire colours.*
     
+      If using the WeMos D1 WiFi, you instead need to wire the `5V` pin on the WeMos to `+` on the motor, `GND`&rarr;`-`, `MISO/D6`&rarr;`IN1`, `SCK/D5`&rarr;`IN2`, `D2`&rarr;`IN3` and `D0`&rarr;`IN4`.
+      {: .requisite-warning .warning .compact}
+
     ![VIN&rarr;+ GND&rarr;- D4&rarr;IN1 D3&rarr;IN2 D0&rarr;IN3 RX&rarr;IN4]({{"/assets/media/lmotorfritzing.png" | relative_url}}){: .u-max-full-width}
 
 3.  #### Wiring the right motor
     Plug 6 wires from the WeMos into the right motor driver. If you look at the bot with the **screen facing you**, the driver is on the right side of the body. *You don't need to use the exact wire colours.*
     
-    ![VIN&rarr;+ GND&rarr;- D4&rarr;IN1 D3&rarr;IN2 D0&rarr;IN3 RX&rarr;IN4]({{"/assets/media/rmotorfritzing.png" | relative_url}}){: .u-max-full-width}
+      If using the WeMos D1 WiFi, you instead need to wire the second `5V` pin on the WeMos to `+` on the motor, `GND`&rarr;`-`, `D12/MISO`&rarr;`IN1`, `TX1/D9`&rarr;`IN2`, `D8`&rarr;`IN3` and `MOSI/D7`&rarr;`IN4`.
+      {: .requisite-warning .warning .compact}
+    
+    ![VIN&rarr;+ GND&rarr;- D8&rarr;IN1 D7&rarr;IN2 D6&rarr;IN3 D5&rarr;IN4]({{"/assets/media/rmotorfritzing.png" | relative_url}}){: .u-max-full-width}
 
 4.  #### Plugging things in
     Plug the motor cables into the drivers. The white connector should click in to the white socket on the driver. Do this for both motors.
 
-    ![VIN&rarr;+ GND&rarr;- D4&rarr;IN1 D3&rarr;IN2 D0&rarr;IN3 RX&rarr;IN4]({{"/assets/media/motorwire.jpg" | relative_url}}){: .u-max-full-width}
+    ![Motors&rarr;Drivers]({{"/assets/media/motorwire.jpg" | relative_url}}){: .u-max-full-width}
 
 5.  #### Code
     Now you've built your bot, it's time to test the screen and motors.
+
+      {: .requisite-warning .warning .compact}
+      If you're using the WeMos D1 WiFi and Visual Studio Code, you'll first need to open `platformio.ini` and replace `board = d1_mini` with `board = d1`.
 
     Have a look at the code below. This code will:
     1. draw a smile face on the robot screen
@@ -63,7 +75,7 @@ header_bg: "#F7FCFB"
 
     void setup() {
         Draw.start(); // set up screen
-        Motor.start(D8, D7, D6, D5, D4, D3, D0, RX); // set up motors
+        Motor.start(D5, D6, D7, D8, D4, D3, D0, RX); // set up motors
     }
 
     void loop() {
@@ -77,7 +89,11 @@ header_bg: "#F7FCFB"
     ```
     {: .ide}
 
-    1. Copy the code above and paste into the Arduino IDE.
+    1. Copy the code above and paste into the IDE.
+
+          If you're using the WeMos D1 WiFi, you'll need to replace `Motor.start(D5, D6, D7, D8, D4, D3, D0, RX);` with `Motor.start(D7, D8, D9, D12, D0, D2, D5, D6);`.
+          {: .requisite-warning .warning .compact}
+
     2. Press the upload button <i class="arduino-upload"></i>. You'll see the 
         code compiling and uploading in the black box at the bottom. When it's 
         done you should see '*Done Uploading*' just above the black box.

@@ -118,6 +118,9 @@ header_bg: "#FEF6FA"
     ```
     {: .ide}
 
+    Once again, If you're using the WeMos D1 WiFi, you'll need to replace `Motor.start(D5, D6, D7, D8, D4, D3, D0, RX);` with `Motor.start(D7, D8, D9, D12, D0, D2, D5, D6);`.
+    {: .requisite-warning .warning .compact}
+
 4.  #### Testing the Wi-Fi
     1.  Change the Wi-Fi name and password near the top of the code in the quotes to the one given to you by a helper.
     2.  Press the upload button <i class="arduino-upload"></i>. You'll see the code compiling and uploading in the black box at the bottom. When it's done you should see '*Done Uploading*' just above the black box.
