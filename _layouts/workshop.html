@@ -10,7 +10,7 @@
     <article>
       <section class="hero article-hero" style="{% if page.header_bg %}background-color: {{page.header_bg}};{% endif %}">
         <div class="container hero-content" style="{% if page.header_img %}background-image: url({{ page.header_img | relative_url }}); {% endif %}">
-          <h1 class="hero-heading pad-bottom">{% if page.core_challenge %}<sup class="beta"> {{page.core_challenge}}. </sup>{% endif %}{{page.title}}{% if page.beta %}<sup class="beta"> &beta;</sup>{% endif %}</h1>
+          <h1 class="hero-heading pad-bottom">{{page.title}}{% if page.beta %}<sup class="beta"> &beta;</sup>{% endif %}</h1>
           <p class="hero-subtitle pad-bottom">{{page.description}}</p>
           
           <div class="article-summary-list">
@@ -35,37 +35,10 @@
           </div>
         </div>
       </section>
-      <main class="container article-container">
-        {% if page.requires_workshop %}
-        {% assign req = site.challenges | where: "title",page.requires_workshop | first %}
-        <div class="requisite-warning">
-          <h4>Requires a PC and a Hedgehog&nbsp;Bot</h4>
-          If you've not built a Hedgehog Bot, complete the <a href="{{"/challenges/2-bot" | relative_url}}">Bot</a>&nbsp;challenge.
-          {% if page.requires_workshop != "Bot" %}For this challenge, you'll also need to complete the <a href="{{req.url | relative_url}}">{{req.title}}</a>&nbsp;challenge{% endif %}
-          You'll also need a microUSB cable{% if page.requires_kit %}, and {{page.requires_kit}}{% endif %}.
-        </div>
-        {% elsif page.requires_kit %}
-        <div class="requisite-warning requisite-warning-kit requisite-warning-kit-{{page.requires_kit}}">
-          <h4>Requires a PC and a Hedgehog Bot kit</h4>
-          <p class="no-margin">From the kit, you'll need
-          {% if page.requires_kit == "board-only" %} just your WeMos board and a microUSB cable.
-          {% else %} everything: your WeMos board, microUSB cable, two motors and drivers, screen, 9V battery and adaptor, body and jumper cables.
-          {% endif %}
-          If you need to build a kit, or you don't recognise something, you can reference the <a href="{{ "/parts" | relative_url}}">part list</a>.</p>
-        </div>
-        {% endif %}
-        
-        {% if page.beta %}
+      <main class="container article-container">{% if page.beta %}
         <div class="requisite-warning warning beta-warning">
           <h4>This workshop is in beta</h4>
           It may be a little rough around the edges: <a href="https://twitter.com/{{site.twitter_username}}">tweet us</a> if there's any issues.
-        </div>
-        {% endif %}
-        
-        {% if page.alt_v1 %}
-        <div class="requisite-warning warning">
-          <h4>This challenge is for Hedgehog Bot v2 only</h4>
-          <p class="no-margin">Hedgehog Bot Kit V1 was distributed in 2015 and contains an Arduino Nano and breadboard. <strong>No further workshops are being developed for older versions of the kit</strong>, although a compatible version of this challenge <a href="{{ page.alt_v1 | absolute_url }}" rel="noopener noreferrer" target="_blank">is available</a>.</p>
         </div>
         {% endif %}
 
@@ -82,7 +55,6 @@
             {% assign prev = links %}
           {% endif %}
         {% endfor %}
-        {% assign core_count = document | where_exp: 'item', 'item.core_challenge' | size %}
 
         {{ content }}
 
@@ -102,7 +74,7 @@
         {% if nexturl %}
         <a href={{nexturl | relative_url}} class="u-pull-right a-next hidden-print">
           <span>Next</span>
-          <h4>{% if next.core_challenge %}<sup class="beta"> {{next.core_challenge}}.&ensp;</sup>{% endif %}{{next.title}}</h4>
+          <h4>{{next.title}}</h4>
         </a>
         {% endif %}
 

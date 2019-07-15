@@ -3,41 +3,44 @@ layout: default
 layout_fullwidth: true
 ---
 
-<a href="{{ '/challenges' | relative_url }}">
-  <section class="hero hero-purple">
-    <div class="container hero-content no-padding-top">
-      <img class="u-max-full-width" src="{{ '/assets/media/hedgehog-bot.png' | relative_url }}" alt="">
-      <h2 class="hero-heading">Learn with Hedgehog</h2>
-      <p class="hero-subtitle pad-bottom">The perfect start to IoT, for all ages</p>
-      <span class="hero-subtitle">
-        <span class="button">Get Started</span>
-      </span>
-    </div>
-  </section>
-</a>
+<section class="">
+  <div class="container hero-content">
+    <h2 class="hero-heading">Outreach Workshops</h2>
+    <p class="hero-subtitle pad-bottom">Created for DigiMakers and free to all</p>
+    <a href="https://digimakers.co.uk" class="hero-subtitle">
+      <span class="button">LEARN MORE</span>
+    </span>
+  </div>
+</section>
 
-<a href="{{ '/challenges/clock' | relative_url }}">
-  <section class="hero hero-green">
-    <div class="container hero-content">
-      <img class="pad-bottom" src="{{ '/assets/media/hedgehog-green.svg' | relative_url }}" alt="">
-      <h2 class="hero-heading">Hedgehog Clock<sup class="beta"> &beta;</sup></h2>
-      <span class="hero-subtitle">New online workshop available</span>
-    </div>
-  </section>
-</a>
-
-<a href="//digimakers.co.uk">
-  <section class="hero hero-orange">
-    <div class="container">
-      <div class="row">
-        <div class="one-half column hero-content mobile-pad-right">
-          <h2 class="hero-heading">Digimakers</h2>
-          <span class="hero-subtitle">Truly free tech workshops for all</span>
-        </div><!--
-        --><div class="one-half column mobile-off-right">
-          <img class="u-max-full-width" src="{{ '/assets/media/digimakers-helper.png' | relative_url }}" alt="">
-        </div>
+{% for item in site.workshops %}
+<a href="{{ item.url | relative_url }}">
+  <section class="hero article-hero" style="{% if item.header_bg %}background-color: {{item.header_bg}};{% endif %}">
+    <div class="container hero-content" style="{% if item.header_img %}background-image: url({{ item.header_img | relative_url }}); {% endif %}">
+      <h1 class="hero-heading pad-bottom">{{item.title}}{% if item.beta %}<sup class="beta"> &beta;</sup>{% endif %}</h1>
+      <p class="hero-subtitle pad-bottom">{{item.description}}</p>
+      
+      <div class="article-summary-list">
+        {% if item.language %}
+        <dl>
+          <dt>Language</dt>
+          <dd>{{item.language}}</dd>
+        </dl>
+        {% endif %}
+        {% if item.est_time %}
+        <dl>
+          <dt>Est. Time</dt>
+          <dd>{{item.est_time}}</dd>
+        </dl>
+        {% endif %}
+        {% if item.difficulty %}
+        <dl>
+          <dt>Difficulty</dt>
+          <dd>{{item.difficulty}}</dd>
+        </dl>
+        {% endif %}
       </div>
     </div>
   </section>
 </a>
+{% endfor %}

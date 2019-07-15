@@ -13,40 +13,35 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Hedgehog Bot
-url: "http://hedgehogbot.digimakers.co.uk"
+title: Workshop
+url: "https://workshops.mrvs.city"
 baseurl: "" # the subpath of your site, e.g. /blog
-author: University of Bristol Outreach
+author: James Daly
 description: >
-  A build-it-yourself IOT (Internet-of-Things) robot kit.
-  Designed for anyone aged 10 and above to help learn how to program and to
-  build electronics.
+  Workshops by the University of Bristol SCEEM Outreach team for the wider
+  community.
 twitter_username: Digi_Makers
 facebook_admin_id: 732762314
 github_username: MVSE-Outreach
 keywords:
-- arduino tutorial
 - programming
-- robot
-- wifi
-- esp8266
-- hedgehog
+- robotics
 - iot
 - bristol
 - digimakers
 - outreach
 
 collections:
-  challenges:
+  workshops:
     output: true
-    permalink: /challenges/:path
+    permalink: /workshops/:path
 
 defaults:
   - scope:
       path: ""
-      type: challenges
+      type: workshops
     values:
-      layout: challenge
+      layout: workshop
 
 # Build settings
 markdown: kramdown

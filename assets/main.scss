@@ -537,6 +537,10 @@ a.clippy:hover i:before {
   -moz-user-select: none;
 }
 
+.requisite-warning.info {
+  border-color: #a0fdd6;
+}
+
 .requisite-warning + .requisite-warning {
   margin-top: -3rem;
 }
