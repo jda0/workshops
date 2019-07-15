@@ -5,7 +5,7 @@ description: Learn to code a dancing robot, make it light up with your favourite
 
 beta: true
 
-language: JS
+language: JavaScript
 est_time: 30&ndash;90min
 difficulty: Moderate
 completion: 
@@ -16,7 +16,8 @@ header_bg: "#FCFDF6"
 ---
 
 1.  #### Let's Go!
-    This workshop focuses on giving a BitBot robot commands using code, written in a language called JavaScript. It has motors, sensors and lights controlled by a Micro:Bit. We can also use JavaScript to make websites, apps and many other thingss=.
+
+    This workshop focuses on giving a BitBot robot commands using code, written in a language called JavaScript. It has motors, sensors and lights controlled by a Micro:Bit. We can also use JavaScript to make websites, apps and many other things.
 
     To get started, go to [makecode.microbit.org](https://makecode.microbit.org) and click **New Project**.
 
@@ -34,7 +35,7 @@ header_bg: "#FCFDF6"
     
     From there, go back to the editor and click **{} JavaScript** at the top, and you're good to go!
 
-2.  #### Turn on the lights
+2.  #### Turn on the Lights
 
     Let’s do some coding and test the botbit is working by turning on it’s lights! At the moment, your code editor should read...
 
@@ -57,20 +58,20 @@ header_bg: "#FCFDF6"
 
     &#8203;
 
-    ##### Copying it to the micro:bit
+    ##### Copying It to the Micro:Bit
 
-    Click the download button and the bottom of the screen and save the code (hex file) to the micro:bit.
+    Click the download button and the bottom of the screen and save the code (hex file) to the Micro:Bit.
 
     ![]({{'/assets/media/bitbot-intro/block-download.png' | relative_url}}){: .u-max-full-width}
 
     The code will often download to your _Downloads_ folder. You'll need to open _File Explorer_ (_Finder_ on macOS), and copy the file to _MICROBIT_. On Windows, you can find _MICROBIT_ in _This PC_ or _My Computer_ &mdash; on other operating systems, it'll be wherever you find USB drives.
     {: .requisite-warning .warning .compact}
 
-    You should see a little yellow light flashing on the micro:bit (next to the USB port) while the hex file is copying over. Once it’s stopped flashing, unplug the USB cable and switch on the BitBot with the on/off switch!
+    You should see a little yellow light flashing on the Micro:Bit (next to the USB port) while the hex file is copying over. Once it’s stopped flashing, unplug the USB cable and switch on the BitBot with the on/off switch!
 
     &#8203;
 
-    ##### A BitBot to be proud of
+    ##### A BitBot to be Proud of
 
     Hopefully when you turn on the BitBot you can see a rainbow of lights like so:
 
@@ -91,21 +92,21 @@ header_bg: "#FCFDF6"
     ```
     {: .ide}
 
-    Download it to your micro:bit and see what happens!
+    Download it to your Micro:Bit and see what happens!
 
     &#8203;
 
-    #### We need more colours...
+    #### We Need More Colours...
 
     Next, see if you can make another LED light up a different colour. You can see on the BitBot that each LED is numbered...
 
     ![Image: each LED on the BitBot is numbered from 0 to 11]({{'/assets/media/bitbot-intro/bitbot-leds.png' | relative_url}}){: .u-max-full-width}
 
-    Duplicate and amend this line for all of the LEDs you'd like to set the colour of. When you’re happy with your code, click **Download** and save it to the micro:bit. Once it’s finished copying to the micro:bit and the USB light has stopped flashing, unplug the USB cable and switch on the bitbot. Are the lights working like you expected?
+    Duplicate and amend this line for all of the LEDs you'd like to set the colour of. When you’re happy with your code, click **Download** and save it to the Micro:Bit. Once it’s finished copying to the Micro:Bit and the USB light has stopped flashing, unplug the USB cable and switch on the bitbot. Are the lights working like you expected?
 
     &#8203;
 
-    ##### Take your time
+    ##### Take Your Time
 
     You could also try adding lines that read:
 
@@ -118,7 +119,7 @@ header_bg: "#FCFDF6"
     
     &#8203;
 
-    ##### For smart cookies (Extension)
+    ##### For Smart Cookies (Extension)
 
     This part is optional &mdash; you can skip to step 4 if you prefer!
     {: .requisite-warning .warning .compact}
@@ -171,7 +172,7 @@ header_bg: "#FCFDF6"
     ```
     {: .spoiler .ide data-spoiler-text="<em class="hidden-print">Click to show example</em>"}
 
-3.  #### Making it move
+4.  #### Making It Move
 
     Remember the code we started with?
 
@@ -197,7 +198,7 @@ header_bg: "#FCFDF6"
     `() => {}`  and `function () {}` are very similar, and define functions (blocks of code, which we can give names and reuse). There's subtle differences we won't get into here as they don't affect us with what we're doing. If you're really curious, you can learn more on the [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
     {: .spoiler .requisite-warning .warning .info .compact data-spoiler-text="<em class="hidden-print">If you're curious: What's the difference between <em><code>() =></code></em> and <em><code>function ()?</code></em></em>" }
 
-    Download it to your micro:bit. Remember: once the USB light on the micro:bit has stopped flashing, unplug the USB cable and switch on the bitbot.
+    Download it to your Micro:Bit. Remember: once the USB light on the Micro:Bit has stopped flashing, unplug the USB cable and switch on the bitbot.
     
     Is the bitbot moving? Does the code behave like you think it should? If so, now switch off the bitbot.
     
@@ -205,7 +206,7 @@ header_bg: "#FCFDF6"
 
     &#8203;
 
-    ##### Like a spinning top...
+    ##### Like a Spinning Top...
 
     You can also make your Bit:Bot spin clockwise by replacing the line `bitbot.driveMilliseconds(600, 400)` with the line:
 
@@ -231,6 +232,6 @@ header_bg: "#FCFDF6"
 
     **Remember to switch off the BitBot while you code!**
 
-4.  #### Line following
+5.  #### Line Following
 
-5.  #### Do you have the lämp bröther?
+6.  #### Do You Have the Lämp Bröther?

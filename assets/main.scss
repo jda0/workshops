@@ -537,10 +537,6 @@ a.clippy:hover i:before {
   -moz-user-select: none;
 }
 
-.requisite-warning.info {
-  border-color: #a0fdd6;
-}
-
 .requisite-warning + .requisite-warning {
   margin-top: -3rem;
 }
@@ -660,12 +656,19 @@ sup.beta {
   }
 
   .article-container > ol > li::before {
-    display: none;
+    content: counter(art-ol-counter) '.';
+    // display: none;
+    border: none;
+    margin-left: 0;
+    margin-right: 1.5rem;
+    width: auto;
+    text-align: left;
+    margin-top: -2.6rem;
   }
 
   .article-container > ol > li {
-    margin-left: 2em;
-    padding-left: 1em;
+    margin-left: 0;
+    padding-left: 0;
   }
 
   .article-container .completion li {
