@@ -159,15 +159,13 @@ header_bg: "#FCFDF6"
     ```
 
     ```js
+    // Animated lights example
     basic.forever(() => {
-
       bitbot.neoRainbow()
-      
       for (let i = 0; i < 12; i++) {     // i++ adds 1 to i
         basic.pause(200)
         bitbot.neoSetPixelColor(i, bitbot.BBColours(BBColors.Black))
       }
-
     })
     ```
     {: .spoiler .ide data-spoiler-text="<em class="hidden-print">Click to show example</em>"}
@@ -193,7 +191,7 @@ header_bg: "#FCFDF6"
     ```
     {: .ide}
 
-    This code will make the bitbot drive forward at speed **600** for **400** milliseconds (or 0.4 seconds), then pause for half a second (500ms).
+    This code will make the bitbot drive forward at speed **600** for **400** milliseconds (or 0.4 seconds), then pause for half a second (500ms)... and repeat it forever!
 
     `() => {}`  and `function () {}` are very similar, and define functions (blocks of code, which we can give names and reuse). There's subtle differences we won't get into here as they don't affect us with what we're doing. If you're really curious, you can learn more on the [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions){: target='_blank' rel='nofollow noopener noreferrer'}.
     {: .spoiler .requisite-warning .warning .info .compact data-spoiler-text="<em class="hidden-print">If you're curious: What's the difference between <em><code>() =></code></em> and <em><code>function ()?</code></em></em>" }
@@ -218,6 +216,7 @@ header_bg: "#FCFDF6"
     Try changing the direction, speed and duration of the turn, and combining driving, turns, pauses and lights to make a little disco robot. If you get stuck, you can click on **Blocks** at the top to see your code as blocks!
 
     ```js
+    // Dancing Example
     bitbot.neoRainbow()
     basic.forever(() => {
       bitbot.driveMilliseconds(600, 400)
@@ -234,4 +233,121 @@ header_bg: "#FCFDF6"
 
 5.  #### Line Following
 
+    On the bottom of your BitBot you'll see two line sensors:
+
+    ![Image: the line sensors on your bitbot look like a pair of translucent domes, coloured blue and black]({{ '/assets/media/bitbot-intro/bitbot-sensors.png' | relative_url }})
+
+    We're going to use these line sensors to tell the bitbot to follow a line.
+
+    ![]({{ 'assets/media/bitbot-intro/bitbot-line.jpg' | relative_url }})
+
+    &#8203;
+
+    ##### If This Then That
+
+    To follow a line, we need to do the following:
+
+    - **If** the left line sensor detects a line, **then** spin left;
+    - **Else If** the right line sensor detects a line, **then** spin right;
+    - **Else** drive straight on.
+
+    We can express this in code using an **if statement**, which takes the form:
+    
+    ```js
+    if (<condition>) <then>             // <then> can only be one line of code
+    else if (<other_condition>) <then>
+    else <otherwise>
+    
+    // or
+
+    if (<condition>) {
+      <then>                            // <then> can be as much code as you like
+                                        //   if you add parentheses around it!
+    } else if (<other_condition>) {
+      <then>
+    } else {
+      <otherwise>
+    }
+    ```
+    
+    **Note the brackets around the condition!** We can turn "***if** the left line sensor detects a line, **then** spin left*" into the code:
+
+    ```js
+    basic.forever(() => {
+      if (bitbot.readLine(BBLineSensor.Left)) {
+        bitbot.driveTurn(BBRobotDirection.Left, 300)
+      }
+    })
+    ```
+    {: .ide}
+
+    **Delete your `forever` loop and replace it with the code above.** Can you do the other conditions from above on your own? Once you’ve finished your code, download it to the Micro:Bit and switch on the BitBot to test it out. If you’re stuck ask for help. 
+
+    ```js
+    // Line following
+    basic.forever(() => {
+      if (bitbot.readLine(BBLineSensor.Left)) {
+        bitbot.driveTurn(BBRobotDirection.Left, 300)
+      } else if (bitbot.readLine(BBLineSensor.Right)) {
+        bitbot.driveTurn(BBRobotDirection.Right, 300)
+      } else {
+        bitbot.drive(300)
+      }
+    })
+    ```
+    {: .spoiler .ide data-spoiler-text="<em class="hidden-print">Click to show solution</em>"}
+
+    Why not add LEDs to show when the bitbot is turning left and right?
+    
+    Setting an LED to black turns it off.
+    {: .requisite-warning .warning .info .compact}
+
+
 6.  #### Do You Have the Lämp Bröther?
+
+    Now we’ve done line following, how about light following? Just like the line following sensors, the BitBot has two light following sensors:
+
+    ![Image: the light sensors on your bitbot are on the tips of the two 'arms' and look like a pair of small white squares.]({{ '/assets/media/bitbot-intro/bitbot-ldrs.png' | relative_url }})
+
+    You can get the amount of light hitting the left sensor (an integer between 0 and 1023) by writing:
+    
+    ```js
+    bitbot.readLight(BBLightSensor.Left)`
+    ```
+    
+    You can swap `Left` with `Right` to get the amount of light hitting the other sensor.
+    
+    Try writing some code to control the speed and direction of the motors depending on the amount of light hitting the sensors! You can control the speed an individual motor by writing:
+    
+    ```js
+    bitbot.motor(BBMotor.Left, 600)
+    ```
+
+    ```js
+    // Simple light following
+    basic.forever(() => {
+      bitbot.motor(BBMotor.Left, bitbot.readLight(BBLightSensor.Left))
+      bitbot.motor(BBMotor.Right, bitbot.readLight(BBLightSensor.Right))
+    })
+    ```
+    {: .spoiler .ide data-spoiler-text="<em class="hidden-print">Click to show simple solution</em>"}
+
+    ```js
+    // Advanced light following
+    const lbg = bitbot.readLight(BBLightSensor.Left)
+    const rbg = bitbot.readLight(BBLightSensor.Right)
+
+    basic.forever(function () {
+        const lls = bitbot.readLight(BBLightSensor.Left) - lbg
+        const rls = bitbot.readLight(BBLightSensor.Right) - rbg
+
+        if (Math.abs(lls - rls) < 64)
+          bitbot.drive(300)
+        else if (lls > rls) {
+          bitbot.driveTurn(BBRobotDirection.Left, 300)
+        } else {
+          bitbot.driveTurn(BBRobotDirection.Right, 300)
+        }
+    })
+    ```
+    {: .spoiler .ide data-spoiler-text="<em class="hidden-print">Click to show advanced solution</em>"}
