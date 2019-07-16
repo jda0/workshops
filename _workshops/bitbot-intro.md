@@ -19,7 +19,7 @@ header_bg: "#FCFDF6"
 
     This workshop focuses on giving a BitBot robot commands using code, written in a language called JavaScript. It has motors, sensors and lights controlled by a Micro:Bit. We can also use JavaScript to make websites, apps and many other things.
 
-    To get started, go to [makecode.microbit.org](https://makecode.microbit.org) and click **New Project**.
+    To get started, go to [makecode.microbit.org](https://makecode.microbit.org){: target='_blank' rel='nofollow noopener noreferrer'} and click **New Project**.
 
     ![The <strong>New Project</strong> button is large, purple and has a plus (+) on it]({{'/assets/media/bitbot-intro/block-new-project.png' | relative_url}}){: .u-max-full-width}
 
@@ -195,7 +195,7 @@ header_bg: "#FCFDF6"
 
     This code will make the bitbot drive forward at speed **600** for **400** milliseconds (or 0.4 seconds), then pause for half a second (500ms).
 
-    `() => {}`  and `function () {}` are very similar, and define functions (blocks of code, which we can give names and reuse). There's subtle differences we won't get into here as they don't affect us with what we're doing. If you're really curious, you can learn more on the [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+    `() => {}`  and `function () {}` are very similar, and define functions (blocks of code, which we can give names and reuse). There's subtle differences we won't get into here as they don't affect us with what we're doing. If you're really curious, you can learn more on the [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions){: target='_blank' rel='nofollow noopener noreferrer'}.
     {: .spoiler .requisite-warning .warning .info .compact data-spoiler-text="<em class="hidden-print">If you're curious: What's the difference between <em><code>() =></code></em> and <em><code>function ()?</code></em></em>" }
 
     Download it to your Micro:Bit. Remember: once the USB light on the Micro:Bit has stopped flashing, unplug the USB cable and switch on the bitbot.
