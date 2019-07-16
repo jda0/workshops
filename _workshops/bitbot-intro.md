@@ -133,7 +133,7 @@ header_bg: "#FCFDF6"
     <then>
     ```
 
-    where `<start>` contains instructions to perform before the first time the `<code>` runs, and the `<condition>` tells the computer whether to loop again or skip to `<then>`. For example, what you expect `x` to equal after the following code has run?
+    where `<start>` contains instructions to perform before the first time the `<code>` runs, and the `<condition>` tells the computer whether to loop again or skip to `<then>`. For example, what do you expect `x` to equal after the following code has run?
 
     ```js
     let x = 0
