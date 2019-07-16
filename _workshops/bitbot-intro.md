@@ -163,7 +163,7 @@ header_bg: "#FCFDF6"
 
       bitbot.neoRainbow()
       
-      for (let i = 0; i < 11; i++) {     // i++ adds 1 to i
+      for (let i = 0; i < 12; i++) {     // i++ adds 1 to i
         basic.pause(200)
         bitbot.neoSetPixelColor(i, bitbot.BBColours(BBColors.Black))
       }
