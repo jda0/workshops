@@ -18,4 +18,8 @@ Digimakers is an ongoing collaboration between the University of Bristol and the
 
 #### Who am I?
 
-I'm James and I began supporting Digimakers while studying Computer Science at the University of Bristol, from where I graduate in July 2019. I was also Outreach Officer for [CSS Bristol](//cssbristol.co.uk) in 2018-19. As of September 2019, I work as Fullstack Engineer for Roam Analytics, as part of the Silicon Valley Internship Program. My personal site is [mrvs.city](//mrvs.city), **@jda0_** is my [Twitter](//twitter.com/jda0_) handle, and I'm **jda0** on [Instagram](//instagram.com/jda0) and [GitHub](//github.com/jda0).
+I'm James and I began supporting Digimakers while studying Computer Science at the University of Bristol, from where I graduated in July 2019. I was also Outreach Officer for [CSS Bristol](//cssbristol.co.uk) in 2018-19. 
+
+As of September 2019, I work as Fullstack Engineer for [Roam Analytics](//roamanalytics.com/company/) as part of the [Silicon Valley Internship Program](//siliconvalleyinternship.com/).
+
+My personal site is [mrvs.city](//mrvs.city), **@jda0_** is my [Twitter](//twitter.com/jda0_) handle, and I'm **jda0** on [Instagram](//instagram.com/jda0) and [GitHub](//github.com/jda0).
